@@ -141,8 +141,8 @@ public partial class UI_ProjectEditUIPage : System.Web.UI.Page
     {
         try
         {
-            ClientManager clientManagerObject = new ClientManager();
-            clientNameDropDownList.DataSource = clientManagerObject.GetAllClient();
+            ClientGateway ClientGatewayObject = new ClientGateway();
+            clientNameDropDownList.DataSource = ClientGatewayObject.GetClientTable();
             clientNameDropDownList.DataTextField = "CompanyName";
             clientNameDropDownList.DataValueField = "ID";
             clientNameDropDownList.DataBind();

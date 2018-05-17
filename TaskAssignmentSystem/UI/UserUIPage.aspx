@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_UserUIPage" Title="Untitled Page" Codebehind="UserUIPage.aspx.cs" %>
+<%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_UserUIPage"  Codebehind="UserUIPage.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
 <div style="height:600px">
         <div>

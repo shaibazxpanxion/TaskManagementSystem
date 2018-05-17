@@ -30,7 +30,7 @@ public partial class UI_ClientEditUIPage : System.Web.UI.Page
         }
 
         Client clientObject = new Client();
-        clientObject.Id = clientIdDropDownList.Text;
+        clientObject.Id = clientIdDropDownList.SelectedItem.Text;
         clientObject.CompanyName = companyNameTextBox.Text;
         clientObject.ContactPerson = contactPersonTextBox.Text;
         clientObject.ContactDate = Convert.ToDateTime(contactDateTextBox.Text);
@@ -40,8 +40,13 @@ public partial class UI_ClientEditUIPage : System.Web.UI.Page
 
         try
         {
-            ClientManager clientManagerObject = new ClientManager();
-            message = clientManagerObject.UpdateClient(clientObject);
+            ClientGateway ClientGatewayObject = new ClientGateway();
+            message = ClientGatewayObject.UpdateClient(clientObject).ToString();
+            if(message == "True")
+            {
+                message = "Data has been updated successfully";
+            }
+
         }
         catch (SqlException sqlExceptionObj)
         {
@@ -86,8 +91,8 @@ public partial class UI_ClientEditUIPage : System.Web.UI.Page
 
         try
         {
-            ClientManager clientManagerObject = new ClientManager();
-            Client clientObject = clientManagerObject.SelectClient(clientIdDropDownList.SelectedItem.Value);
+            ClientGateway ClientGatewayObject = new ClientGateway();
+            Client clientObject = ClientGatewayObject.SelectClient(clientIdDropDownList.SelectedItem.Text);
             companyNameTextBox.Text = clientObject.CompanyName;
             contactPersonTextBox.Text = clientObject.ContactPerson;
             contactDateTextBox.Text = clientObject.ContactDate.ToString();
@@ -187,13 +192,13 @@ public partial class UI_ClientEditUIPage : System.Web.UI.Page
     {
         try
         {
-            ClientManager clientManagerObject = new ClientManager();
-            clientIdDropDownList.DataSource = clientManagerObject.GetAllClient();
-            clientIdDropDownList.DataTextField = "CompanyName";
-            clientIdDropDownList.DataValueField = "ID";
+            ClientGateway ClientGatewayObject = new ClientGateway();
+            clientIdDropDownList.DataSource = ClientGatewayObject.GetClientTable();
+            clientIdDropDownList.DataTextField = "client_ID"; 
+            clientIdDropDownList.DataValueField = "client_CompanyName";
             clientIdDropDownList.DataBind();
 
-            if (clientManagerObject.GetAllClient().Count == 0)
+            if (ClientGatewayObject.GetClientTable().Rows.Count == 0)
             {
                 errorLabel.Text = "No client is created yet. Can't edit client information";
             }

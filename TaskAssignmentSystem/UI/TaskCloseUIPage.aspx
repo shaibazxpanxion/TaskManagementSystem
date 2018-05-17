@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_TaskStatusEditUIPage" Title="Untitled Page" Codebehind="TaskCloseUIPage.aspx.cs" %>
+<%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_TaskStatusEditUIPage"  Codebehind="TaskCloseUIPage.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
     <asp:Label ID="Label1" runat="server" Style="z-index: 100; left: 390px; position: absolute;
         top: 312px" Text="Task ID"></asp:Label>

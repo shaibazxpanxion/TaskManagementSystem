@@ -14,6 +14,7 @@ public partial class UI_ClientSaveInfoUIPage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
         this.idLabel.Text = Request.QueryString["Id"];
         this.nameLabel.Text = Request.QueryString["CompanyName"];
         this.contactPersonLabel.Text = Request.QueryString["ContactPerson"];
@@ -26,7 +27,7 @@ public partial class UI_ClientSaveInfoUIPage : System.Web.UI.Page
     protected void saveButton_Click(object sender, EventArgs e)
     {
         Client clientObj = null;
-        ClientManager clientManagerObject = null;
+        ClientGateway ClientGatewayObject = null;
         string message = null;
         try
         {
@@ -38,9 +39,16 @@ public partial class UI_ClientSaveInfoUIPage : System.Web.UI.Page
             clientObj.Address = addressLabel.Text;
             clientObj.PhoneNo = phoneLabel.Text;
             clientObj.Email = emailLabel.Text;
-            clientManagerObject = new ClientManager();
-            message = clientManagerObject.SaveClient(clientObj);
-            Response.Redirect("ClientCreateUIPage.aspx?"+"&message="+Server.UrlEncode(message));
+            ClientGatewayObject = new ClientGateway();
+            message = ClientGatewayObject.InsertClient(clientObj).ToString();
+
+            if (message == "True")
+            {
+                message = "Data has been saved successfully";
+                Response.Redirect("ClientCreateUIPage.aspx?" + "&message=" + Server.UrlEncode(message));
+            }
+
+          
         }
         catch (PrimaryKeyException primaryKeyExceptionObj)
         {
@@ -58,6 +66,13 @@ public partial class UI_ClientSaveInfoUIPage : System.Web.UI.Page
 
     protected void cancelButton_Click(object sender, EventArgs e)
     {
-        Response.Redirect("ClientCreateUIPage.aspx");
+        Response.Redirect("ClientCreateUIPage.aspx?"
+       + "&Ids=" + Server.UrlEncode(this.idLabel.Text)
+       + "&CompanyNames=" + Server.UrlEncode(this.nameLabel.Text)
+       + "&ContactPersons=" + Server.UrlEncode(this.contactPersonLabel.Text)
+       + "&ContactDates=" + Server.UrlEncode(this.contactDateLabel.Text)
+       + "&Addresss=" + Server.UrlEncode(this.addressLabel.Text)
+       + "&Phones=" + Server.UrlEncode(this.phoneLabel.Text)
+       + "&Emails=" + Server.UrlEncode(this.emailLabel.Text));
     }
 }

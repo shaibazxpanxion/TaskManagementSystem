@@ -345,7 +345,6 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="UI\MasterPage.master" />
-    <Content Include="UI\MasterPageNormalUser.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -354,7 +353,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\BLL\ClientManager.cs" />
     <Compile Include="App_Code\BLL\CommentManager.cs" />
     <Compile Include="App_Code\BLL\DataValidator.cs" />
     <Compile Include="App_Code\BLL\EmployeeManager.cs" />
@@ -478,13 +476,6 @@
     </Compile>
     <Compile Include="UI\MasterPage.master.designer.cs">
       <DependentUpon>MasterPage.master</DependentUpon>
-    </Compile>
-    <Compile Include="UI\MasterPageNormalUser.master.cs">
-      <DependentUpon>MasterPageNormalUser.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UI\MasterPageNormalUser.master.designer.cs">
-      <DependentUpon>MasterPageNormalUser.master</DependentUpon>
     </Compile>
     <Compile Include="UI\ProjectAddEmployeeUIPage.aspx.cs">
       <DependentUpon>ProjectAddEmployeeUIPage.aspx</DependentUpon>

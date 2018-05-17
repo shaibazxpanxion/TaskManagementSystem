@@ -82,13 +82,13 @@
                                 </asp:MenuItem>
                                 <asp:MenuItem Text="Edit an Existing User" Value="Edit an Existing User" NavigateUrl="~/UI/UserEditUIPage.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Delete Existing User" Value="Delete Existing User" NavigateUrl="~/UI/UserRemoveUIPage.aspx"></asp:MenuItem>
-                            </asp:MenuItem>
+                            </asp:MenuItem>--%>
                             <asp:MenuItem Text="Client" Value="Client Information" Target="0">
                                 <asp:MenuItem NavigateUrl="~/UI/ClientCreateUIPage.aspx" Text="Create a New Client"
                                     Value="Create a New Client"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/UI/ClientEditUIPage.aspx" Text="Edit a Client Information"
                                     Value="Edit a Client Information"></asp:MenuItem>
-                            </asp:MenuItem>--%>
+                            </asp:MenuItem>
                                                    
                                 
                                <%-- <asp:MenuItem Text="View Reports" Value="View Reports" Target="0">

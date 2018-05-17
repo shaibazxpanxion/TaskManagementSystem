@@ -204,17 +204,17 @@ public partial class UI_ProjectCreateUIPage : System.Web.UI.Page
     {
         try
         {
-            //ClientManager clientManagerObject = new ClientManager();
-            //clientNameDropDownList.DataSource = clientManagerObject.GetAllClient();
+            //ClientGateway ClientGatewayObject = new ClientGateway();
+            //clientNameDropDownList.DataSource = ClientGatewayObject.GetAllClient();
 
-            ClientGateway clientManagerObject = new ClientGateway();
-            clientNameDropDownList.DataSource = clientManagerObject.GetClientTable();
+            ClientGateway ClientGatewayObject = new ClientGateway();
+            clientNameDropDownList.DataSource = ClientGatewayObject.GetClientTable();
             clientNameDropDownList.DataTextField = "client_CompanyName";
             clientNameDropDownList.DataValueField = "client_ID";
             clientNameDropDownList.DataBind();
 
-            //if (clientManagerObject.GetAllClient().Count == 0)
-            if (clientManagerObject.GetClientTable().Rows.Count == 0)
+            //if (ClientGatewayObject.GetAllClient().Count == 0)
+            if (ClientGatewayObject.GetClientTable().Rows.Count == 0)
             {
                 errorLabel.Text = "No client is created.";
             }

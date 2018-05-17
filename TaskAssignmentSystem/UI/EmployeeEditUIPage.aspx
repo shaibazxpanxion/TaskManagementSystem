@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_EmployeeEditUIPage" Title="Untitled Page" Codebehind="EmployeeEditUIPage.aspx.cs" %>
+<%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_EmployeeEditUIPage"  Codebehind="EmployeeEditUIPage.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
 <div style="height:600px">
     <table style="z-index: 100; left: 366px; position: absolute; top: 295px">

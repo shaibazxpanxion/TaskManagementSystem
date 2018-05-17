@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_TaskEditUIPage" Title="Untitled Page" Codebehind="TaskEditUIPage.aspx.cs" %>
+<%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_TaskEditUIPage"  Codebehind="TaskEditUIPage.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
 <div style="height:600px">
     <asp:Panel ID="Panel1" runat="server" Height="367px" Style="z-index: 100; left: 249px;

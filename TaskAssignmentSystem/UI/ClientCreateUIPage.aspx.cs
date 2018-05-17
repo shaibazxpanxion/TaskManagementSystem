@@ -15,8 +15,19 @@ public partial class UI_ClientCreateUIPage : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         LoadClientData();
+
+      
+
+
         if (!Page.IsPostBack)
         {
+            this.idTextBox.Text = Request.QueryString["Ids"];
+            this.companyNameTextBox.Text = Request.QueryString["CompanyNames"];
+            this.contactPersonTextBox.Text = Request.QueryString["ContactPersons"];
+            this.contactDateTextBox.Text = Request.QueryString["ContactDates"];
+            this.addressTextBox.Text = Request.QueryString["Addresss"];
+            this.phoneNoTextBox.Text = Request.QueryString["Phones"];
+            this.emailTextBox.Text = Request.QueryString["Emails"];
             successLabel.Text = Request.QueryString["message"];
         }
     }
@@ -101,11 +112,11 @@ public partial class UI_ClientCreateUIPage : System.Web.UI.Page
            errorLabel.Text = "Please enter address";
            return false;
        }
-       else if (!DataValidator.IsNumber(phoneNoTextBox.Text))
-       {
-           errorLabel.Text = "Please enter valid phone number";
-           return false;
-       }
+       //else if (!DataValidator.IsNumber(phoneNoTextBox.Text))
+       //{
+       //    errorLabel.Text = "Please enter valid phone number";
+       //    return false;
+       //}
        else if (temp.Length != 0)
        {
            errorLabel.Text = temp;
@@ -124,8 +135,8 @@ public partial class UI_ClientCreateUIPage : System.Web.UI.Page
     {
         try
         {
-            ClientManager clientManagerObject = new ClientManager();
-            clientGridView.DataSource = clientManagerObject.GetClientTable();
+            ClientGateway ClientGatewayObject = new ClientGateway();
+            clientGridView.DataSource = ClientGatewayObject.GetClientTable();
             clientGridView.DataBind();
         }
         catch (SqlException sqlExceptionObj)
