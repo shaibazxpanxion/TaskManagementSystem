@@ -71,9 +71,15 @@ public partial class UI_ProjectRemoveEmployeeUIPage : System.Web.UI.Page
             Project projectObject = new Project();
             projectObject.ID = projectDropDownList.SelectedItem.Value;
             projectObject.Employee_Id = employeeDropDownList.SelectedItem.Value;
-            //ProjectGateway ProjectGatewayObject = new ProjectGateway();
-            //string employeeRemoveStatus = ProjectGatewayObject.RemovedEmployeeFromProject(projectObject);
-            //successLabel.Text = employeeRemoveStatus;
+            ProjectGateway ProjectGatewayObject = new ProjectGateway();
+            string employeeRemoveStatus = ProjectGatewayObject.RemoveEmployeeFromProject(projectObject).ToString();
+            successLabel.Text = employeeRemoveStatus;
+
+            if (successLabel.Text == "True")
+            {
+                successLabel.Text = "Removed the employee to the project";
+            }
+
             errorLabel.Text = "";
         }
         catch (SqlException sqlExceptionObject)

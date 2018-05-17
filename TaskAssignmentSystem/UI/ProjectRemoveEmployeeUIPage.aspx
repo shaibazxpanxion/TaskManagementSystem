@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_ProjectRemoveEmployeeUIPage" Title="Untitled Page" Codebehind="ProjectRemoveEmployeeUIPage.aspx.cs" %>
+<%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_ProjectRemoveEmployeeUIPage" Codebehind="ProjectRemoveEmployeeUIPage.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
     <asp:DropDownList ID="projectDropDownList" runat="server" AutoPostBack="True" Style="z-index: 100;
         left: 568px; position: absolute; top: 320px" Width="120px" OnSelectedIndexChanged="projectDropDownList_SelectedIndexChanged" OnDataBound="projectDropDownList_DataBound">
@@ -10,18 +10,34 @@
     <asp:DropDownList ID="employeeDropDownList" runat="server" Style="z-index: 103; left: 566px;
         position: absolute; top: 366px" Width="120px" OnDataBound="employeeDropDownList_DataBound">
     </asp:DropDownList>
-    <asp:Label ID="errorLabel" runat="server" ForeColor="Red" Style="z-index: 104; left: 210px;
-        position: absolute; top: 250px"></asp:Label>
+    <asp:Label ID="errorLabel" runat="server" ForeColor="Red" Style="z-index: 104; left: 248px;
+        position: absolute; top: 211px"></asp:Label>
     <asp:Label ID="successLabel" runat="server" ForeColor="Green" Style="z-index: 105;
-        left: 210px; position: absolute; top: 230px"></asp:Label>
+        left: 245px; position: absolute; top: 195px"></asp:Label>
     <asp:Button ID="removeemployeeButton" runat="server" OnClick="removeemployeeButton_Click"
-        Style="z-index: 107; left: 474px; position: absolute; top: 417px" Text="Remove Employee" Width="150px" />
+        Style="z-index: 107; left: 474px; position: absolute; top: 417px" Text="Remove Employee" Font-Bold="true" Width="150px" />
         <table>
+
+            <tr>
+            <td>&nbsp;</td>
+        </tr>
         <tr>
+            <td>&nbsp;</td>
+        </tr>
+          <tr>
+            <td style="margin-left: 160px;font:bold;color:darkblue">
+                &nbsp;            
+                   <h3>
+                   Remove an employee from a project</h3>
+                </td>
+                 </tr>
+
+
+        <%--<tr>
             <td align="center" style="width: 950px; color: window; background-color: royalblue;">
                 <h3>
                     Remove an employee from a project</h3></td>
-        </tr>
+        </tr>--%>
     </table>
 </asp:Content>
 

@@ -77,15 +77,6 @@ D:\Training\TaskSystem\TaskAssignmentSystem\TaskAssignmentSystem\TaskAssignmentS
 D:\Training\TaskSystem\TaskAssignmentSystem\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.csprojResolveAssemblyReference.cache
 D:\Training\TaskSystem\TaskAssignmentSystem\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.dll
 D:\Training\TaskSystem\TaskAssignmentSystem\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.pdb
-D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\ApplicationInsights.config
-D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\TaskAssignmentSystem.dll.config
-D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\TaskAssignmentSystem.dll
-D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\TaskAssignmentSystem.pdb
-D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\WebApplication.dll
-D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\WebApplication.pdb
-D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.dll
-D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.pdb
-D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.csprojResolveAssemblyReference.cache
 \\XIPL0586\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\ApplicationInsights.config
 \\XIPL0586\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\TaskAssignmentSystem.dll.config
 \\XIPL0586\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\TaskAssignmentSystem.dll
@@ -95,3 +86,11 @@ D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSy
 \\XIPL0586\Training\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.csprojResolveAssemblyReference.cache
 \\XIPL0586\Training\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.dll
 \\XIPL0586\Training\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.pdb
+D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\ApplicationInsights.config
+D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\TaskAssignmentSystem.dll.config
+D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\TaskAssignmentSystem.dll
+D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\TaskAssignmentSystem.pdb
+D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\WebApplication.dll
+D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\WebApplication.pdb
+D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.dll
+D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.pdb
