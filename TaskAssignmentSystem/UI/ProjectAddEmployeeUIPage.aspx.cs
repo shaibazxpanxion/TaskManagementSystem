@@ -70,6 +70,11 @@ public partial class UI_ProjectAddEmployeeUIPage : System.Web.UI.Page
             ProjectGateway ProjectGatewayObject = new ProjectGateway();
             successLabel.Text = ProjectGatewayObject.AddEmployeeToProject(projectObject).ToString();
 
+            if(successLabel.Text == "True")
+            {
+                successLabel.Text = "Added the new employee to the project";
+            }
+
             errorLabel.Text = "";
             nonMemberEmployeeListBox.Items.Clear();
             selectedEmployeeListBox.Items.Clear();
@@ -167,7 +172,7 @@ public partial class UI_ProjectAddEmployeeUIPage : System.Web.UI.Page
         {
             string employeeId = Session["userID"].ToString();
             ProjectGateway ProjectGatewayObject = new ProjectGateway();
-            projectDropDownList.DataSource = ProjectGatewayObject.SelectAllOpenProjects(employeeId);
+            projectDropDownList.DataSource = ProjectGatewayObject.SelectAllOpenProjects();
             projectDropDownList.DataTextField = "Title";
             projectDropDownList.DataValueField = "ID";
             projectDropDownList.DataBind();
