@@ -68,7 +68,13 @@
                                 <asp:MenuItem NavigateUrl="~/UI/TaskUIPage.aspx" Text="All Tasks(View only)"
                                     Value="Task and Comment Forward"></asp:MenuItem>
                             </asp:MenuItem>
-                            <asp:MenuItem Text="Employee" Value="Employee Information">
+                            <asp:MenuItem Text="User Type" Value="User Information" Target="0">
+                                <asp:MenuItem NavigateUrl="~/UI/UserUIPage.aspx" Text="Create a New User" Value="Create a New User">
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Edit an Existing User" Value="Edit an Existing User" NavigateUrl="~/UI/UserEditUIPage.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Delete Existing User" Value="Delete Existing User" NavigateUrl="~/UI/UserRemoveUIPage.aspx"></asp:MenuItem>
+                            </asp:MenuItem>--%>
+                             <asp:MenuItem Text="Employee" Value="Employee Information">
                                 <asp:MenuItem NavigateUrl="~/UI/EmployeeUIPage.aspx" Text="Create a new Employee"
                                     Value="Create a new Employee"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/UI/EmployeeEditUIPage.aspx" Text="Edit an Employee Information"
@@ -77,12 +83,6 @@
                                 <asp:MenuItem NavigateUrl="~/UI/ProjectRemoveEmployeeUIPage.aspx" Text="Remove Employee from Project"
                                     Value="Remove Employee from Project"></asp:MenuItem>
                             </asp:MenuItem>
-                            <asp:MenuItem Text="User" Value="User Information" Target="0">
-                                <asp:MenuItem NavigateUrl="~/UI/UserUIPage.aspx" Text="Create a New User" Value="Create a New User">
-                                </asp:MenuItem>
-                                <asp:MenuItem Text="Edit an Existing User" Value="Edit an Existing User" NavigateUrl="~/UI/UserEditUIPage.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Delete Existing User" Value="Delete Existing User" NavigateUrl="~/UI/UserRemoveUIPage.aspx"></asp:MenuItem>
-                            </asp:MenuItem>--%>
                             <asp:MenuItem Text="Client" Value="Client Information" Target="0">
                                 <asp:MenuItem NavigateUrl="~/UI/ClientCreateUIPage.aspx" Text="Create a New Client"
                                     Value="Create a New Client"></asp:MenuItem>

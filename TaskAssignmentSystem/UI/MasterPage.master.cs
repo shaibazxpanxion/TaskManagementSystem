@@ -38,9 +38,11 @@ public partial class UI_MasterPage : System.Web.UI.MasterPage
         catch (NullReferenceException nullReferenceExceptionObject)
         {
             userNameLabel.Text = "Cant find User Id. Session time may out. "+nullReferenceExceptionObject.Message;
-            mainContentPlaceHolder.Visible = false;
-            menuMain.Visible = false;
-            homeHyperLink.Visible = false;
+            //mainContentPlaceHolder.Visible = false;
+            //menuMain.Visible = false;
+            //homeHyperLink.Visible = false;
+            Response.Redirect("~/UI/LogInUI.aspx");
+
         }
     }
 
