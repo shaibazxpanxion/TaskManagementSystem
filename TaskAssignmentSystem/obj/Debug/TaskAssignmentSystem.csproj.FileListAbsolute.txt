@@ -94,3 +94,4 @@ D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\WebApplication.dll
 D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\bin\WebApplication.pdb
 D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.dll
 D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.pdb
+D:\Training\TaskAssignmentSystem\TaskAssignmentSystem\obj\Debug\TaskAssignmentSystem.csprojResolveAssemblyReference.cache
