@@ -99,13 +99,13 @@ public partial class UI_UserUIPage : System.Web.UI.Page
         try
         {
             TaskManager taskManagerObj = new TaskManager();
-            EmployeeManager employeeManagerObject = new EmployeeManager();
-            employeeIdDropDownList.DataSource = employeeManagerObject.GetAllNonUserEmployees();
+            EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
+            employeeIdDropDownList.DataSource = EmployeeGatewayObject.SelectAllNonUserEmployees();
             employeeIdDropDownList.DataTextField = "Name";
             employeeIdDropDownList.DataValueField = "ID";
             employeeIdDropDownList.DataBind();
 
-            if (employeeManagerObject.GetAllNonUserEmployees().Count == 0)
+            if (EmployeeGatewayObject.SelectAllNonUserEmployees().Count == 0)
             {
                 errorMessageLabel.Text = "All employee is a user.";
             }

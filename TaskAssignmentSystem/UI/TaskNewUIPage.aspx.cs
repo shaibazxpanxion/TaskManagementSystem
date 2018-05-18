@@ -101,8 +101,8 @@ public partial class UI_TaskNewUIPage : System.Web.UI.Page
     {
         try
         {
-            EmployeeManager employeeManagerObject = new EmployeeManager();
-            employeeDropDownList.DataSource = employeeManagerObject.GetEmployeesOfTheProject(projectDropDownList.SelectedItem.Value);
+            EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
+            employeeDropDownList.DataSource = EmployeeGatewayObject.GetAllEmployeesOfAProject(projectDropDownList.SelectedItem.Value);
             employeeDropDownList.DataTextField = "Name";
             employeeDropDownList.DataValueField = "Id";
             employeeDropDownList.DataBind();

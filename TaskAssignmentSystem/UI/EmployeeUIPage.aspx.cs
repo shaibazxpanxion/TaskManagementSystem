@@ -17,6 +17,13 @@ public partial class UI_EmployeeUIPage : System.Web.UI.Page
         LoadInitialData();
         if (!Page.IsPostBack)
         {
+            this.employeeIdTextBox.Text = Request.QueryString["Id"];
+            this.employeeNameTextBox.Text = Request.QueryString["Name"];
+            this.employeeAddressTextBox.Text = Request.QueryString["Address"];
+            this.employeePhoneTextBox.Text = Request.QueryString["Phone"];
+            this.employeeEmailTextBox.Text = Request.QueryString["Email"];
+            this.employeeJoindateTextBox.Text = Request.QueryString["JoinDate"];
+            this.employeeDOBTextBox.Text = Request.QueryString["DOB"];
             successMessageLabel.Text = Request.QueryString["message"];
         }
     }

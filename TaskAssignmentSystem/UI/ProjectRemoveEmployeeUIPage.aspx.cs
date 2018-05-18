@@ -131,8 +131,8 @@ public partial class UI_ProjectRemoveEmployeeUIPage : System.Web.UI.Page
     {
         try
         {
-            EmployeeManager employeeManagerObject = new EmployeeManager();
-            employeeDropDownList.DataSource = employeeManagerObject.GetEmployeesOfTheProject(projectDropDownList.SelectedItem.Value);
+            EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
+            employeeDropDownList.DataSource = EmployeeGatewayObject.GetAllEmployeesOfAProject(projectDropDownList.SelectedItem.Value);
             employeeDropDownList.DataTextField = "Name";
             employeeDropDownList.DataValueField = "ID";
             employeeDropDownList.DataBind();
@@ -199,8 +199,8 @@ public partial class UI_ProjectRemoveEmployeeUIPage : System.Web.UI.Page
                     //This counts the number of projects admin have
 
 
-            EmployeeManager employeeManagerObject = new EmployeeManager();
-            int numberOfEmployee = employeeManagerObject.GetEmployeesOfTheProject(projectDropDownList.SelectedItem.Value).Count;
+            EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
+            int numberOfEmployee = EmployeeGatewayObject.GetAllEmployeesOfAProject(projectDropDownList.SelectedItem.Value).Count;
                     //If there is only one project member then he cant be removed        
                     //This counts the number of members of the selected project
 

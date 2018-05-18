@@ -40,8 +40,8 @@ public partial class UI_EmployeeEditUIPage : System.Web.UI.Page
 
         try
         {
-            EmployeeManager employeeManagerObject = new EmployeeManager();
-            message = employeeManagerObject.UpdateEmployee(employeeObject);
+            EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
+            message = EmployeeGatewayObject.UpdateEmployee(employeeObject).ToString();
         }
         catch (SqlException sqlExceptionObj)
         {
@@ -52,6 +52,15 @@ public partial class UI_EmployeeEditUIPage : System.Web.UI.Page
             errorLabel.Text = exceptionObj.Message;
         }
         successLabel.Text = message;
+
+        if(successLabel.Text == "True")
+        {
+            successLabel.Text = "Employee data is been updated";
+        }
+        else
+        {
+            successLabel.Text = "Employee data is been not updated";
+        }
         errorLabel.Text = "";
     }
 
@@ -70,8 +79,8 @@ public partial class UI_EmployeeEditUIPage : System.Web.UI.Page
 
         try
         {
-            EmployeeManager employeeManagerObject = new EmployeeManager();
-            Employee employeeObject = employeeManagerObject.SelectEmployee(employeeIdDropDownList.Text);
+            EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
+            Employee employeeObject = EmployeeGatewayObject.SelectEmployee(employeeIdDropDownList.Text);
             employeeNameTextBox.Text = employeeObject.Name;
             employeeAddressTextBox.Text = employeeObject.Address;
             employeePhoneTextBox.Text = employeeObject.PhoneNo;
@@ -103,10 +112,10 @@ public partial class UI_EmployeeEditUIPage : System.Web.UI.Page
     {
         try
         {
-            EmployeeManager employeeManagerObject = new EmployeeManager();
-            employeeIdDropDownList.DataSource = employeeManagerObject.GetAllEmployees();
-            employeeIdDropDownList.DataTextField = "ID";
-            employeeIdDropDownList.DataValueField = "ID";
+            EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
+            employeeIdDropDownList.DataSource = EmployeeGatewayObject.GetEmployeeTable();
+            employeeIdDropDownList.DataTextField = "employee_Id";
+            employeeIdDropDownList.DataValueField = "employee_Id";
             employeeIdDropDownList.DataBind();
         }
         catch (SqlException sqlExceptionObj)

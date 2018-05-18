@@ -143,8 +143,8 @@ public partial class UI_NormalUserViewTaskUIPage : System.Web.UI.Page
     {
         try
         {
-            EmployeeManager employeeManagerObject = new EmployeeManager();
-            employeeNameDropDownList.DataSource = employeeManagerObject.GetEmployeesOfTheProject(taskObj.Project_Id);
+            EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
+            employeeNameDropDownList.DataSource = EmployeeGatewayObject.GetAllEmployeesOfAProject(taskObj.Project_Id);
             employeeNameDropDownList.DataTextField = "Name";
             employeeNameDropDownList.DataValueField = "ID";
             employeeNameDropDownList.DataBind();

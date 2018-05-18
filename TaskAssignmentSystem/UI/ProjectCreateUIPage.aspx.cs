@@ -157,11 +157,11 @@ public partial class UI_ProjectCreateUIPage : System.Web.UI.Page
     {
         try
         {
-            //EmployeeManager employeeManagerObject = new EmployeeManager();
+            //EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
 
-            EmployeeGateway employeeManagerObject = new EmployeeGateway();
-            //allEmployeeListBox.DataSource = employeeManagerObject.GetAllUserEmployees();
-            allEmployeeListBox.DataSource = employeeManagerObject.GetEmployeeTable();
+            EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
+            //allEmployeeListBox.DataSource = EmployeeGatewayObject.GetAllUserEmployees();
+            allEmployeeListBox.DataSource = EmployeeGatewayObject.GetEmployeeTable();
             allEmployeeListBox.DataTextField = "employee_Name";
             allEmployeeListBox.DataValueField = "employee_ID";
             allEmployeeListBox.DataBind();

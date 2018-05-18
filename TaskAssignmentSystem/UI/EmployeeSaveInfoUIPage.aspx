@@ -1,6 +1,6 @@
 <%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_EmployeeSaveInfoUIPage"  Codebehind="EmployeeSaveInfoUIPage.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
-<div style="height:600px">
+    <div style="height:600px">
     <div>
         <div style="z-index: 100; left: 330px; width: 430px; position: absolute; top: 295px;
             height: 347px">
@@ -38,20 +38,35 @@
             <asp:Label ID="Label14" runat="server" BorderStyle="None" Height="26px" Style="z-index: 113;
                 left: 22px; position: absolute; top: 230px" Text=" Date of Birth: " Width="141px"></asp:Label>
             <asp:Button ID="saveButton" runat="server"  Style="z-index: 114;
-                left: 22px; position: absolute; top: 300px" Text="Save" Width="141px" OnClick="saveButton_Click" />
+                left: 22px; position: absolute; top: 300px" Text="Save" Width="141px" OnClick="saveButton_Click" Font-Bold="True" />
             <asp:Button ID="cancelButton" runat="server"  Style="z-index: 116;
-                left: 235px; position: absolute; top: 300px" Text="Cancel" Width="155px" OnClick="cancelButton_Click" />
+                left: 235px; position: absolute; top: 300px" Text="Cancel" Width="155px" OnClick="cancelButton_Click" Font-Bold="True" />
         </div>
         <table>
-        <tr>
-            <td align="center" style="width: 951px; color: window; background-color: royalblue;">
-                <h3>
-                    Make Sure All Information Is Right</h3></td>
-        </tr>
+       
+
+            <tr>
+
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td style="margin-left: 160px; color: darkblue">
+                    <h3>  Make Sure All Information Is Right</h3>
+                </td>
+            </tr>
+
+
     </table>
     </div>
-    <asp:Label ID="errorMessageLabel" runat="server" Style="z-index: 100; left: 210px;
-        position: absolute; top: 230px" ForeColor="Red"></asp:Label>
+    <asp:Label ID="errorMessageLabel" runat="server" Style="z-index: 100; left: 252px;
+        position: absolute; top: 197px; width: 305px;" ForeColor="Red"></asp:Label>
 </div>
 </asp:Content>
 

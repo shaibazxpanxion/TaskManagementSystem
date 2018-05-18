@@ -177,7 +177,7 @@ public partial class UI_ProjectAddEmployeeUIPage : System.Web.UI.Page
             projectDropDownList.DataValueField = "ID";
             projectDropDownList.DataBind();
 
-            if(ProjectGatewayObject.SelectAllOpenProjects(employeeId).Count==0)
+            if(ProjectGatewayObject.SelectAllOpenProjects().Count==0)
             {
             errorLabel.Text = "Admin is not a member of any project yet. Can't add employee(s) to any project";
             }
@@ -199,13 +199,13 @@ public partial class UI_ProjectAddEmployeeUIPage : System.Web.UI.Page
     {
         try
         {
-            EmployeeManager employeeManagerObject = new EmployeeManager();
-            nonMemberEmployeeListBox.DataSource = employeeManagerObject.GetAllNonMemberEmployeeOfTheProject(projectDropDownList.SelectedItem.Value);
+            EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
+            nonMemberEmployeeListBox.DataSource = EmployeeGatewayObject.GetAllNonMemberEmployeeOfAProjrct(projectDropDownList.SelectedItem.Value);
             nonMemberEmployeeListBox.DataTextField = "Name";
             nonMemberEmployeeListBox.DataValueField = "ID";
             nonMemberEmployeeListBox.DataBind();
 
-            if (employeeManagerObject.GetAllNonMemberEmployeeOfTheProject(projectDropDownList.SelectedItem.Value).Count == 0)
+            if (EmployeeGatewayObject.GetAllNonMemberEmployeeOfAProjrct(projectDropDownList.SelectedItem.Value).Count == 0)
             {
                 errorLabel.Text = "All employees are member of this project";
             }

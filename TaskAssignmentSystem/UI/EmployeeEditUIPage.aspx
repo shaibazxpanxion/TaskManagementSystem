@@ -50,7 +50,7 @@
             <td style="width: 100px">
             </td>
             <td style="width: 147px">
-                <asp:Button ID="updateButton" runat="server"  Text="Update" OnClick="updateButton_Click" /></td>
+                <asp:Button ID="updateButton" runat="server"  Text="Update" OnClick="updateButton_Click" Font-Bold="True" /></td>
         </tr>
         <tr>
             <td style="width: 100px">
@@ -66,22 +66,37 @@
         </tr>
     </table>
     <table>
+               <tr>
+
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
         <tr>
-            <td align="center" style="width: 950px; color: window; background-color: royalblue;">
-                <h3>
-                    Edit Employee Information</h3></td>
-        </tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td style="margin-left: 160px; color: darkblue">
+                  <h3>Edit Employee Information</h3>   &nbsp;</td>
+               
+            </tr>
+
     </table>
     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-    <asp:Label ID="dateEGLabel" runat="server" Height="18px" Style="z-index: 100; left: 632px;
-        position: absolute; top: 507px" Text="(mm/dd/yyyy)"></asp:Label>
-    <asp:Label ID="emailEGLabel" runat="server" Height="18px" Style="z-index: 101; left: 629px;
-        position: absolute; top: 450px" Text="(e.g. name@domain.com)" Width="190px"></asp:Label>
-    <asp:Label ID="Label8" runat="server" Height="18px" Style="z-index: 102; left: 629px;
-        position: absolute; top: 478px" Text="(mm/dd/yyyy)"></asp:Label>
-                <asp:Label ID="successLabel" runat="server" style="z-index: 103; left: 210px; position: absolute; top: 230px" ForeColor="Green"></asp:Label>
-    <asp:Label ID="errorLabel" runat="server" Style="z-index: 105; left: 210px; position: absolute;
-        top: 250px" ForeColor="Red"></asp:Label>
+    <asp:Label ID="dateEGLabel" runat="server" Height="18px" Style="z-index: 100; left: 670px;
+        position: absolute; top: 490px; bottom: 241px;" Text="(mm/dd/yyyy)" Font-Bold="True"></asp:Label>
+    <asp:Label ID="emailEGLabel" runat="server" Height="18px" Style="z-index: 101; left: 668px;
+        position: absolute; top: 440px" Text="(e.g. name@domain.com)" Width="190px" Font-Bold="True"></asp:Label>
+    <asp:Label ID="Label8" runat="server" Height="18px" Style="z-index: 102; left: 670px;
+        position: absolute; top: 465px" Text="(mm/dd/yyyy)" Font-Bold="True"></asp:Label>
+                <asp:Label ID="successLabel" runat="server" style="z-index: 103; left: 252px; position: absolute; top: 204px" ForeColor="Green"></asp:Label>
+    <asp:Label ID="errorLabel" runat="server" Style="z-index: 105; left: 256px; position: absolute;
+        top: 221px" ForeColor="Red"></asp:Label>
 </div>
 </asp:Content>
 

@@ -48,8 +48,8 @@ public partial class UI_MasterPage : System.Web.UI.MasterPage
 
     private string GetEmployeeName()
     {
-        EmployeeManager employeeManagerObject = new EmployeeManager();
-        Employee employeeObject= employeeManagerObject.SelectEmployee(employeeId);
+        EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
+        Employee employeeObject= EmployeeGatewayObject.SelectEmployee(employeeId);
         return employeeObject.Name;
     }
 

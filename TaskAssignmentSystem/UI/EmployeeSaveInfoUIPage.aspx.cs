@@ -37,9 +37,20 @@ public partial class UI_EmployeeSaveInfoUIPage : System.Web.UI.Page
             employeeObj.JoiningDate = Convert.ToDateTime(joinDateLabel.Text);
             employeeObj.DOB = Convert.ToDateTime(dOBLabel.Text);
             TaskManager taskManagerObj = new TaskManager();
-            EmployeeManager employeeManagerObject = new EmployeeManager();
-            message = employeeManagerObject.SaveEmployee(employeeObj);
+            EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
+            message = EmployeeGatewayObject.InsertEmployee(employeeObj).ToString();
+            if(message == "True")
+            {
+                message = "Employee Data has been Saved";
+               
+            }
+            else
+            {
+                message = "Employee Data has not been Saved";
+            }
+
             Response.Redirect("EmployeeUIPage.aspx?" + "&message=" + Server.UrlEncode(message));
+
         }
         catch (PrimaryKeyException primaryKeyExceptionObj)
         {
@@ -57,6 +68,15 @@ public partial class UI_EmployeeSaveInfoUIPage : System.Web.UI.Page
 
     protected void cancelButton_Click(object sender, EventArgs e)
     {
-        Response.Redirect("EmployeeUIPage.aspx");
+        Response.Redirect("EmployeeUIPage.aspx? "
+       + "&Id=" + Server.UrlEncode(this.employeeIdLabel.Text)
+       + "&Name=" + Server.UrlEncode(this.employeeNameLabel.Text)
+       + "&Address=" + Server.UrlEncode(this.employeeAddressLabel.Text)
+       + "&Phone=" + Server.UrlEncode(this.employeePhoneLabel.Text)
+       + "&Email=" + Server.UrlEncode(this.employeeEmailLabel.Text)
+       + "&JoinDate=" + Server.UrlEncode(this.joinDateLabel.Text)
+       + "&DOB=" + Server.UrlEncode(dOBLabel.Text));
+
+        //Response.Redirect("EmployeeUIPage.aspx");
     }
 }

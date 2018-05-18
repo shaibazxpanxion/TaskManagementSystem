@@ -35,8 +35,8 @@ public partial class UI_UserEditUIPage : System.Web.UI.Page
         try
         {
             UserManager userManagerObject = new UserManager();
-            EmployeeManager employeeManagerObject = new EmployeeManager();
-            Employee employeeObject = employeeManagerObject.SelectEmployee(userDropDownList.SelectedItem.Value);
+            EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
+            Employee employeeObject = EmployeeGatewayObject.SelectEmployee(userDropDownList.SelectedItem.Value);
             userNameLabel.Text = employeeObject.Name;
             if (userManagerObject.IsAdmin(userDropDownList.SelectedItem.Value))
             {

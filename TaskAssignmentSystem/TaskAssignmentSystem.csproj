@@ -355,7 +355,6 @@
   <ItemGroup>
     <Compile Include="App_Code\BLL\CommentManager.cs" />
     <Compile Include="App_Code\BLL\DataValidator.cs" />
-    <Compile Include="App_Code\BLL\EmployeeManager.cs" />
     <Compile Include="App_Code\BLL\NonUserEmployeeException.cs" />
     <Compile Include="App_Code\BLL\OnlyOneAdminException.cs" />
     <Compile Include="App_Code\BLL\PrimaryKeyException.cs" />
