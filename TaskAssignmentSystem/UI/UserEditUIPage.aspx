@@ -1,12 +1,6 @@
 <%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_UserEditUIPage"  Codebehind="UserEditUIPage.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
-<table>
-        <tr>
-            <td align="center" style="width: 950px; color: window; background-color: royalblue;">
-                <h3>
-                    Edit User Type</h3></td>
-        </tr>
-    </table>
+
     <asp:DropDownList ID="userDropDownList" runat="server" Style="z-index: 100; left: 538px;
         position: absolute; top: 318px" OnSelectedIndexChanged="userDropDownList_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True" OnDataBound="userDropDownList_DataBound">
     </asp:DropDownList>
@@ -26,5 +20,23 @@
         position: absolute; top: 250px"></asp:Label>
     <asp:Label ID="userNameLabel" runat="server" Style="z-index: 108; left: 650px; position: absolute;
         top: 321px" Width="200px"></asp:Label>
+
+    <table>
+        
+          <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        
+        <tr>
+            <td style="margin-left: 160px;color:darkblue">
+                <h3>Edit User Type</h3>
+            </td>
+           </tr>
+         
+    </table>
+
 </asp:Content>
 

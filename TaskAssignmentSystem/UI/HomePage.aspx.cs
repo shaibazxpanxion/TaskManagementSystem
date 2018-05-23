@@ -41,9 +41,9 @@ public partial class UI_HomePage : System.Web.UI.Page
     {
         try
         {
-            TaskManager taskmanagerObj = new TaskManager();
-            numberOfTasksLabel.Text = taskmanagerObj.GetAllOpenTasksOfAUser(employeeId).Count + " task(s) " + " \nAssigened to this employee  \n";
-            tasksOfUserBulletedList.DataSource = taskmanagerObj.GetAllOpenTasksOfAUser(employeeId);
+            TaskGateway TaskGatewayObj = new TaskGateway();
+            numberOfTasksLabel.Text = TaskGatewayObj.GetAllOpenTasksOfAUser(employeeId).Count + " task(s) " + " \nAssigened to this employee  \n";
+            tasksOfUserBulletedList.DataSource = TaskGatewayObj.GetAllOpenTasksOfAUser(employeeId);
             tasksOfUserBulletedList.DataTextField = "Name";
             tasksOfUserBulletedList.DataValueField = "ID";
             tasksOfUserBulletedList.DataBind();

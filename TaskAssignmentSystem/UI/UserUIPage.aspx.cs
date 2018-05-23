@@ -47,9 +47,19 @@ public partial class UI_UserUIPage : System.Web.UI.Page
             userObj.UserPassword = passwordField.Text;
             userObj.CreateDate = System.DateTime.Now;
             userObj.UserType = typeDropDownList.SelectedItem.Text;
-            UserManager userManagerObject = new UserManager();
-            string msg = userManagerObject.CreateUser(userObj);
-            successLabel.Text = msg + "  " + employeeIdDropDownList.SelectedItem.Text.ToString() + " is now a " + typeDropDownList.SelectedItem.Text.ToString();
+            UserGateway UserGatewayObject = new UserGateway();
+            string msg = UserGatewayObject.InsertUser(userObj).ToString();
+
+            if(msg == "True")
+            {
+                successLabel.Text = "User created successfully" + "  " + employeeIdDropDownList.SelectedItem.Text.ToString() + " is now a " + typeDropDownList.SelectedItem.Text.ToString();
+            }
+            else
+            {
+                successLabel.Text = "User is not created";
+            }
+
+           
             errorMessageLabel.Text = "";
             employeeIdDropDownList.Items.Clear();
             FillEmployeeDropDownList();
@@ -98,7 +108,7 @@ public partial class UI_UserUIPage : System.Web.UI.Page
     {
         try
         {
-            TaskManager taskManagerObj = new TaskManager();
+            TaskGateway TaskGatewayObj = new TaskGateway();
             EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
             employeeIdDropDownList.DataSource = EmployeeGatewayObject.SelectAllNonUserEmployees();
             employeeIdDropDownList.DataTextField = "Name";

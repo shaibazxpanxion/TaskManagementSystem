@@ -60,7 +60,7 @@
                                     Value="Remove Employee from Project"></asp:MenuItem>
                                 <asp:MenuItem Text="Close a Project" Value="Close a Project" NavigateUrl="~/UI/ProjectCloseUIPage.aspx"></asp:MenuItem>
                             </asp:MenuItem>
-                           <%-- <asp:MenuItem Text="Task" Value="Task Information">
+                            <asp:MenuItem Text="Task" Value="Task Information">
                                 <asp:MenuItem NavigateUrl="~/UI/TaskNewUIPage.aspx" Text="Create a Task" Value="Create a Task">
                                 </asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/UI/TaskEditUIPage.aspx" Text="Edit an Existing Task"
@@ -73,7 +73,7 @@
                                 </asp:MenuItem>
                                 <asp:MenuItem Text="Edit an Existing User" Value="Edit an Existing User" NavigateUrl="~/UI/UserEditUIPage.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Delete Existing User" Value="Delete Existing User" NavigateUrl="~/UI/UserRemoveUIPage.aspx"></asp:MenuItem>
-                            </asp:MenuItem>--%>
+                            </asp:MenuItem>
                              <asp:MenuItem Text="Employee" Value="Employee Information">
                                 <asp:MenuItem NavigateUrl="~/UI/EmployeeUIPage.aspx" Text="Create a new Employee"
                                     Value="Create a new Employee"></asp:MenuItem>

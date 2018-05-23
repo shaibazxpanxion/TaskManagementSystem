@@ -29,12 +29,21 @@ public partial class UI_TaskStatusEditUIPage : System.Web.UI.Page
     {
         try
         {
-            TaskManager taskManagerObject = new TaskManager();
-            taskObj = taskManagerObject.SelectTask(taskId);
+            TaskGateway TaskGatewayObject = new TaskGateway();
+            taskObj = TaskGatewayObject.SelectTask(taskId);
             taskObj.TaskStatus = "Close";
-            message = taskManagerObject.CloseTask(taskObj);
-            SaveClosingComment();
-            Response.Redirect("HomePage.aspx?" + "&message=" + Server.UrlEncode(message));
+            message = TaskGatewayObject.CloseTask(taskObj).ToString();
+            if(message=="True")
+            {
+                message = "Task is closed.";
+                SaveClosingComment();
+                Response.Redirect("HomePage.aspx?" + "&message=" + Server.UrlEncode(message));
+            }
+            else
+            {
+                message = "Task is still open. some problem occurs during closing the task. ";
+            }
+            
         }
         catch (SqlException sqlExceptionObj)
         {
@@ -50,8 +59,8 @@ public partial class UI_TaskStatusEditUIPage : System.Web.UI.Page
     {
         try
         {
-            TaskManager taskManagerObj = new TaskManager();
-            taskObj = taskManagerObj.SelectTask(taskId);
+            TaskGateway TaskGatewayObj = new TaskGateway();
+            taskObj = TaskGatewayObj.SelectTask(taskId);
             TaskIdLabel.Text = taskObj.Id;
             TaskNameLabel.Text = taskObj.Name;
             taskStatusLabel.Text = taskObj.TaskStatus;

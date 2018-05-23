@@ -22,12 +22,12 @@ public partial class UI_NormalUserViewTaskUIPage : System.Web.UI.Page
     {
         string employeeId;
 
-        bool userType = false;
+        string userType = "";
         try
         {
-            UserManager userManagerObject = new UserManager();
+            UserGateway UserGatewayObject = new UserGateway();
             employeeId = Session["userID"].ToString();
-            userType = userManagerObject.IsAdmin(employeeId);
+            userType = UserGatewayObject.GetUserType(employeeId);
         }
         catch (SqlException sqlExceptionObj)
         {
@@ -166,8 +166,8 @@ public partial class UI_NormalUserViewTaskUIPage : System.Web.UI.Page
     {
         try
         {
-            TaskManager taskManagerObj = new TaskManager();
-            taskObj = taskManagerObj.SelectTask(taskId);
+            TaskGateway TaskGatewayObj = new TaskGateway();
+            taskObj = TaskGatewayObj.SelectTask(taskId);
             taskIdTextBox.Text = taskObj.Id;
             taskNameTextBox.Text = taskObj.Name;
             projectNameTextBox.Text = taskObj.Project_Title;
@@ -236,7 +236,7 @@ public partial class UI_NormalUserViewTaskUIPage : System.Web.UI.Page
     {
         try
         {
-            TaskManager taskManagerObj = new TaskManager();
+            TaskGateway TaskGatewayObj = new TaskGateway();
             Task taskObject = new Task();
             taskObject.Id = taskIdTextBox.Text;
             taskObject.Employee_Id = employeeNameDropDownList.SelectedItem.Value;
@@ -244,7 +244,7 @@ public partial class UI_NormalUserViewTaskUIPage : System.Web.UI.Page
             taskObject.Employee_AssigenBy = taskObj.Employee_Id;
             taskObject.Project_Id = projectNameTextBox.Text;
             taskObject.StartDate = System.DateTime.Now;
-            string forwardStatus = taskManagerObj.ForwardATask(taskObject);
+            string forwardStatus = TaskGatewayObj.ForwardTask(taskObject).ToString();
         }
         catch (SqlException sqlExceptionObj)
         {

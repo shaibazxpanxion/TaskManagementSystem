@@ -36,7 +36,7 @@ public partial class UI_EmployeeSaveInfoUIPage : System.Web.UI.Page
             employeeObj.Email = employeeEmailLabel.Text;
             employeeObj.JoiningDate = Convert.ToDateTime(joinDateLabel.Text);
             employeeObj.DOB = Convert.ToDateTime(dOBLabel.Text);
-            TaskManager taskManagerObj = new TaskManager();
+            TaskGateway TaskGatewayObj = new TaskGateway();
             EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
             message = EmployeeGatewayObject.InsertEmployee(employeeObj).ToString();
             if(message == "True")

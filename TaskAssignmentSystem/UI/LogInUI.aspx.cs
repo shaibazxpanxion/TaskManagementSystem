@@ -28,8 +28,9 @@ public partial class UI_LogInUI : System.Web.UI.Page
         string userType = null;
         try
         {
-            UserManager userManagerObject = new UserManager();
-            userType = userManagerObject.CheckUserIdAndPassword(employeeIdDropDownList.SelectedItem.Value, passwordTextBox.Text);
+            UserGateway UserGatewayObject = new UserGateway();
+            userType = UserGatewayObject.CheckUser(employeeIdDropDownList.SelectedItem.Value, passwordTextBox.Text);
+           
         }
         catch (SqlException sqlExceptionObj)
         {
@@ -64,8 +65,8 @@ public partial class UI_LogInUI : System.Web.UI.Page
     {
         try
         {
-            UserManager userManagerObject = new UserManager();
-            employeeIdDropDownList.DataSource = userManagerObject.GetUserTable();
+            UserGateway UserGatewayObject = new UserGateway();
+            employeeIdDropDownList.DataSource = UserGatewayObject.SelectUserTable();
             employeeIdDropDownList.DataTextField = "user_Employee_Id";
             employeeIdDropDownList.DataValueField = "user_Employee_Id";
             employeeIdDropDownList.DataBind();

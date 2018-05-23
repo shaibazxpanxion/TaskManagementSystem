@@ -1,6 +1,6 @@
 <%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_TaskEditUIPage"  Codebehind="TaskEditUIPage.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
-<div style="height:600px">
+    <div style="height:600px">
     <asp:Panel ID="Panel1" runat="server" Height="367px" Style="z-index: 100; left: 249px;
         position: absolute; top: 317px" Width="450px">
         &nbsp; &nbsp;&nbsp;
@@ -23,8 +23,8 @@
             top: 196px" Text="Start Date"></asp:Label>
         <asp:Label ID="Label2" runat="server" Style="z-index: 108; left: 103px; position: absolute;
             top: 227px" Text="Estimate Date"></asp:Label>
-        <asp:Label ID="updateSuccessLabel" runat="server" Style="z-index: 109; left: -38px;
-            position: absolute; top: -90px" Width="187px" ForeColor="Green"></asp:Label>
+        <asp:Label ID="updateSuccessLabel" runat="server" Style="z-index: 109; left: -3px;
+            position: absolute; top: -118px; width: 887px;" ForeColor="Green"></asp:Label>
         &nbsp;&nbsp;
         <asp:Label ID="Label1" runat="server" Style="z-index: 110; left: 83px; position: absolute;
             top: 167px" Text="Employee Name: "></asp:Label>
@@ -42,14 +42,31 @@
         <asp:Label ID="employeeNameLabel" runat="server" BorderStyle="Groove" Style="z-index: 116;
             left: 229px; position: absolute; top: 164px" Width="143px"></asp:Label>
     </asp:Panel>
-    <asp:Label ID="errorLabel" runat="server" Style="z-index: 102; left: 210px; position: absolute;
-        top: 250px" ForeColor="Red" Width="200px"></asp:Label>
+    <asp:Label ID="errorLabel" runat="server" Style="z-index: 102; left: 251px; position: absolute;
+        top: 218px; width: 901px;" ForeColor="Red"></asp:Label>
         <table>
-        <tr>
-            <td align="center" style="width: 951px; color: window; background-color: royalblue;">
-                <h3>
-                    Edit Task Information</h3></td>
+                     <tr>
+            <td>&nbsp;</td>
         </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        
+         <tr>
+            <td>&nbsp;</td>
+        </tr>
+        
+         <tr>
+            <td>&nbsp;</td>
+        </tr>
+        
+
+        <tr>
+            <td style="margin-left: 160px;color:darkblue">
+                <h3>Edit Task Information</h3>
+            </td>
+           </tr>
+
     </table>
 </div>
 </asp:Content>

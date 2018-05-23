@@ -43,9 +43,19 @@ public partial class UI_TaskSaveInfoUIPage : System.Web.UI.Page
 
         try
         {
-            TaskManager taskManager = new TaskManager();
-            message = taskManager.SaveTask(taskObj);
-            Response.Redirect("TaskNewUIPage.aspx?" + "&message=" + Server.UrlEncode(message));
+            TaskGateway TaskGateway = new TaskGateway();
+            message = TaskGateway.InsertTask(taskObj).ToString();
+
+            if(message == "True")
+            {
+                message = "Task information saved";
+                Response.Redirect("TaskNewUIPage.aspx?" + "&message=" + Server.UrlEncode(message));
+            }
+            else
+            {
+                message = "Task information is not saved";
+            }
+           
         }
         catch (PrimaryKeyException primaryKeyExceptionObj)
         {

@@ -37,9 +37,20 @@ public partial class UI_TaskEditUIPage : System.Web.UI.Page
 
         try
         {
-            TaskManager taskManager = new TaskManager();
-            string message = taskManager.UpdateTask(taskObject);
-            updateSuccessLabel.Text = message;
+            TaskGateway TaskGateway = new TaskGateway();
+            string message = TaskGateway.UpdateTask(taskObject).ToString();
+
+            if (message == "True")
+            {
+                updateSuccessLabel.Text = "Task has been updated.";
+
+            }
+            else
+            {
+                updateSuccessLabel.Text = "Task is not updated";
+            }
+
+           // updateSuccessLabel.Text = message;
             errorLabel.Text = "";
         }
         catch (SqlException sqlExceptionObj)
@@ -68,8 +79,8 @@ public partial class UI_TaskEditUIPage : System.Web.UI.Page
         }
         try
         {
-            TaskManager taskManagerObject = new TaskManager();
-            Task taskObject = taskManagerObject.SelectTask(taskIdDropDownList.Text);
+            TaskGateway TaskGatewayObject = new TaskGateway();
+            Task taskObject = TaskGatewayObject.SelectTask(taskIdDropDownList.Text);
             projectNameLabel.Text = taskObject.Project_Title;
             employeeNameLabel.Text = taskObject.Employee_AssignTo;
             taskNameTextBox.Text = taskObject.Name;
@@ -102,13 +113,13 @@ public partial class UI_TaskEditUIPage : System.Web.UI.Page
         try
         {
             string employeeId = Session["userID"].ToString();
-            TaskManager taskManagerObject = new TaskManager();
-            taskIdDropDownList.DataSource = taskManagerObject.GetAllOpenTasksOfAUser(employeeId);
+            TaskGateway TaskGatewayObject = new TaskGateway();
+            taskIdDropDownList.DataSource = TaskGatewayObject.GetAllOpenTasksOfAUser(employeeId);
             taskIdDropDownList.DataTextField = "Id";
             taskIdDropDownList.DataValueField = "Id";
             taskIdDropDownList.DataBind();
 
-            if (taskManagerObject.GetAllOpenTasksOfAUser(employeeId).Count == 0)
+            if (TaskGatewayObject.GetAllOpenTasksOfAUser(employeeId).Count == 0)
             {
                 errorLabel.Text = "Admin don't have any task in hand right now. Other employee is working on it. Cant edit task information now.";
             }

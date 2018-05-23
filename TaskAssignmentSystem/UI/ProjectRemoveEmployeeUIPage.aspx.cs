@@ -154,8 +154,8 @@ public partial class UI_ProjectRemoveEmployeeUIPage : System.Web.UI.Page
     {
         try
         {
-            TaskManager taskManagerObject = new TaskManager();
-            List<Task> taskListObject = taskManagerObject.GetAllOpenTasksOfAProject(projectDropDownList.SelectedItem.Value, employeeDropDownList.SelectedItem.Value);
+            TaskGateway TaskGatewayObject = new TaskGateway();
+            List<Task> taskListObject = TaskGatewayObject.SelectAllOpenTaskOfTheProject(projectDropDownList.SelectedItem.Value, employeeDropDownList.SelectedItem.Value);
             foreach (Task task in taskListObject)
             {
                 string employeeId = Session["userID"].ToString();
@@ -169,7 +169,7 @@ public partial class UI_ProjectRemoveEmployeeUIPage : System.Web.UI.Page
                 taskObject.Employee_AssignTo = employeeName;
                 taskObject.Employee_AssigenBy = employeeId;
                 taskObject.StartDate = System.DateTime.Now;
-                taskManagerObject.ForwardATask(taskObject);
+                TaskGatewayObject.ForwardTask(taskObject);
             }
         }
         catch (SqlException sqlExceptionObject)
@@ -204,7 +204,7 @@ public partial class UI_ProjectRemoveEmployeeUIPage : System.Web.UI.Page
                     //If there is only one project member then he cant be removed        
                     //This counts the number of members of the selected project
 
-            UserManager userManagerObjrct = new UserManager();
+            UserGateway UserGatewayObjrct = new UserGateway();
 
             if (projectDropDownList.SelectedIndex.Equals(0))  // Item in index 0 is "-Select-" and not a valid item. So must not use
             {
@@ -226,7 +226,7 @@ public partial class UI_ProjectRemoveEmployeeUIPage : System.Web.UI.Page
                 errorLabel.Text = "Please select an employee to remove";
                 return false;
             }
-            else if (userManagerObjrct.IsAdmin(employeeDropDownList.SelectedItem.Value))
+            else if (UserGatewayObjrct.GetUserType(employeeDropDownList.SelectedItem.Value).ToString() == "True")
             {
                 errorLabel.Text = "Admin cant be removed";
                 return false;

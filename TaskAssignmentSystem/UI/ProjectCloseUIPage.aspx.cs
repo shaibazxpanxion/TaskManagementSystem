@@ -107,8 +107,9 @@ public partial class UI_ProjectStatusEditUIPage : System.Web.UI.Page
     {
         try
         {
-            TaskManager taskManagerObject = new TaskManager();
-            List<Task> listOfOpenTasksOfTheProject= taskManagerObject.GetAllOpenTasksOfAProject(projectDropDownList.SelectedItem.Value);
+            TaskGateway TaskGatewayObject = new TaskGateway();
+           
+            List<Task> listOfOpenTasksOfTheProject = TaskGatewayObject.SelectAllOpenTaskOfTheProject(projectDropDownList.SelectedItem.Value);
             int numberOfOpenTask = listOfOpenTasksOfTheProject.Count;
             if (numberOfOpenTask == 0)
             {

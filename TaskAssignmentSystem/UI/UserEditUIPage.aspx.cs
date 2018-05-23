@@ -34,11 +34,11 @@ public partial class UI_UserEditUIPage : System.Web.UI.Page
         }
         try
         {
-            UserManager userManagerObject = new UserManager();
+            UserGateway UserGatewayObject = new UserGateway();
             EmployeeGateway EmployeeGatewayObject = new EmployeeGateway();
             Employee employeeObject = EmployeeGatewayObject.SelectEmployee(userDropDownList.SelectedItem.Value);
             userNameLabel.Text = employeeObject.Name;
-            if (userManagerObject.IsAdmin(userDropDownList.SelectedItem.Value))
+            if (UserGatewayObject.GetUserType(userDropDownList.SelectedItem.Value).ToString() == "Admin")
             {
                 userCurrentTypeLabel.Text = "Admin";
                 changeUserTypeButton.Text = "Change to Normal user ";
@@ -76,9 +76,9 @@ public partial class UI_UserEditUIPage : System.Web.UI.Page
         try
         {
             User userObj = new User();
-            UserManager userManagerObject = new UserManager();
+            UserGateway UserGatewayObject = new UserGateway();
 
-            if (userManagerObject.IsAdmin(userDropDownList.SelectedItem.Value))
+            if (UserGatewayObject.GetUserType(userDropDownList.SelectedItem.Value) == "True")
             {
                 userObj.UserType = "Normal";
             }
@@ -88,8 +88,18 @@ public partial class UI_UserEditUIPage : System.Web.UI.Page
             }
 
             userObj.UserId = userDropDownList.SelectedItem.Value;
-            string message = userManagerObject.EditUserType(userObj);
-            successLabel.Text = message;
+            string message = UserGatewayObject.EditUserType(userObj).ToString();
+
+            if (message=="True")
+            {
+                successLabel.Text = userObj.UserId + " is now " + userObj.UserType; ;
+            }
+            else
+            {
+                successLabel.Text = "User type is not updated";
+            }
+
+            
 
             userDropDownList.Items.Clear();
             LoadUserId();
@@ -126,8 +136,8 @@ public partial class UI_UserEditUIPage : System.Web.UI.Page
     {
         try
         {
-            UserManager userManagerObject = new UserManager();
-            userDropDownList.DataSource = userManagerObject.GetUserTable();
+            UserGateway UserGatewayObject = new UserGateway();
+            userDropDownList.DataSource = UserGatewayObject.SelectUserTable();
             userDropDownList.DataTextField = "user_Employee_Id";
             userDropDownList.DataValueField = "user_Employee_Id";
             userDropDownList.DataBind();

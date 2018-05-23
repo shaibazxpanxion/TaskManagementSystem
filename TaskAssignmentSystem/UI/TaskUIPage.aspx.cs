@@ -40,13 +40,13 @@ public partial class UI_TaskUIPage : System.Web.UI.Page
 
         try
         {
-            TaskManager taskManagerObj = new TaskManager();
-            taskDropDownList.DataSource = taskManagerObj.GetAllTasksOfAProject(projectDropDownList.SelectedItem.Value);
+            TaskGateway TaskGatewayObj = new TaskGateway();
+            taskDropDownList.DataSource = TaskGatewayObj.SelectAllTasksOfTheProject(projectDropDownList.SelectedItem.Value);
             taskDropDownList.DataTextField = "Name";
             taskDropDownList.DataValueField = "ID";
             taskDropDownList.DataBind();
 
-            if (taskManagerObj.GetAllTasksOfAProject(projectDropDownList.SelectedItem.Value).Count == 0)
+            if (TaskGatewayObj.SelectAllTasksOfTheProject(projectDropDownList.SelectedItem.Value).Count == 0)
             {
                 errorLabel.Text = "This project has no task";
             }
@@ -160,8 +160,8 @@ public partial class UI_TaskUIPage : System.Web.UI.Page
     {
         try
         {
-            TaskManager taskManagerObj = new TaskManager();
-            Task taskObj = taskManagerObj.SelectTask(taskDropDownList.SelectedItem.Value);
+            TaskGateway TaskGatewayObj = new TaskGateway();
+            Task taskObj = TaskGatewayObj.SelectTask(taskDropDownList.SelectedItem.Value);
             employeeNameTextBox.Text = taskObj.Employee_AssignTo;
             employeeIdTextBox.Text = taskObj.Employee_Id;
             descriptionTextBox.Text = taskObj.Description;

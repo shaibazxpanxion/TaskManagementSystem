@@ -1,13 +1,7 @@
 <%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_TaskUIPage"  Codebehind="TaskUIPage.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
 <div style="height:800px">
-  <table>
-        <tr>
-            <td align="center" style="width: 950px; color: window; background-color: royalblue;">
-                <h3>
-                    Task (View Only)</h3></td>
-        </tr>
-    </table>
+  
     <asp:Label ID="Label2" runat="server" Style="z-index: 100; left: 313px; position: absolute;
         top: 275px" Text="Project"></asp:Label>
     <asp:DropDownList ID="projectDropDownList" runat="server" AutoPostBack="True" 
@@ -44,8 +38,32 @@
         left: 396px; position: absolute; top: 423px" Width="180px"></asp:TextBox>
     <asp:TextBox ID="startDateTextBox" runat="server" ReadOnly="True" Style="z-index: 115;
         left: 397px; position: absolute; top: 386px" Width="180px"></asp:TextBox>
-    <asp:Label ID="errorLabel" runat="server" Style="z-index: 117; left: 210px; position: absolute;
-        top: 230px" ForeColor="Red"></asp:Label>
+    <asp:Label ID="errorLabel" runat="server" Style="z-index: 117; left: 251px; position: absolute;
+        top: 208px" ForeColor="Red"></asp:Label>
+
+     <table>
+       
+         <tr>
+            <td>&nbsp;</td>
+        </tr>
+        
+         <tr>
+            <td>&nbsp;</td>
+        </tr>
+       
+        
+
+        <tr>
+            <td style="margin-left: 160px;color:darkblue">
+                <h3>Task (View Only)</h3>
+            </td>
+           </tr>
+
+    </table>
+
 </div>
+
+   
+
 </asp:Content>
 

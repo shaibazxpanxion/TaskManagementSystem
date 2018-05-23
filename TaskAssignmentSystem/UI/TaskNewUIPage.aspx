@@ -27,17 +27,17 @@
         <asp:Label ID="Label2" runat="server" Style="z-index: 109; left: 107px; position: absolute;
             top: 233px" Text="Estimate Date"></asp:Label>
         <asp:Button ID="createButton" runat="server"  Style="z-index: 110;
-            left: 193px; position: absolute; top: 301px" Text="Create Task" Width="103px" OnClick="CreateButton_Click" />
-        <asp:Label ID="CreateTaskSuccessLabel" runat="server" Style="z-index: 111; left: -34px;
-            position: absolute; top: -60px" Width="187px" ForeColor="Green"></asp:Label>
+            left: 193px; position: absolute; top: 301px" Text="Create Task" Width="103px" OnClick="CreateButton_Click" Font-Bold="True" />
+        <asp:Label ID="CreateTaskSuccessLabel" runat="server" Style="z-index: 111; left: -1px;
+            position: absolute; top: -96px" Width="187px" ForeColor="Green"></asp:Label>
         <asp:Label ID="Label3" runat="server" Style="z-index: 112; left: 416px; position: absolute;
-            top: 230px" Text="(mm/dd/yyyy)" Width="97px"></asp:Label>
+            top: 230px" Text="(mm/dd/yyyy)" Width="97px" Font-Bold="True"></asp:Label>
         <asp:Label ID="Label4" runat="server" Style="z-index: 113; left: 416px; position: absolute;
-            top: 200px" Text="(mm/dd/yyyy)" Width="100px"></asp:Label>
+            top: 200px" Text="(mm/dd/yyyy)" Width="100px" Font-Bold="True"></asp:Label>
         <asp:Label ID="Label5" runat="server" Style="z-index: 114; left: 416px; position: absolute;
-            top: 170px" Text="(Select employee)" Width="113px"></asp:Label>
+            top: 170px; width: 139px;" Text="(Select employee)" Font-Bold="True"></asp:Label>
         <asp:Label ID="Label6" runat="server" Style="z-index: 120; left: 416px; position: absolute;
-            top: 130px" Text="(Select project)" Width="106px"></asp:Label>
+            top: 130px" Text="(Select project)" Width="106px" Font-Bold="True" Font-Italic="False"></asp:Label>
         <asp:DropDownList ID="projectDropDownList" runat="server" AutoPostBack="True" 
             Style="z-index: 116; left: 229px; position: absolute; top: 127px" Width="180px" OnSelectedIndexChanged="ProjectDropDownList_SelectedIndexChanged" OnDataBound="projectDropDownList_DataBound">
         </asp:DropDownList>
@@ -49,15 +49,36 @@
         <asp:Label ID="ProjectLabel" runat="server" Style="z-index: 119; left: 145px; position: absolute;
             top: 130px" Text="Project"></asp:Label>
     </asp:Panel>
-        <table>
-        <tr>
-            <td align="center" style="width: 950px; color: window; background-color: royalblue;">
-                <h3>
-                    Enter task information</h3></td>
+        
+
+    <table>
+        
+          <tr>
+            <td>&nbsp;</td>
         </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        
+         <tr>
+            <td>&nbsp;</td>
+        </tr>
+        
+         <tr>
+            <td>&nbsp;</td>
+        </tr>
+        
+
+        <tr>
+            <td style="margin-left: 160px;color:darkblue">
+                <h3>Enter task information</h3>
+            </td>
+           </tr>
+         
     </table>
-    <asp:Label ID="errorLabel" runat="server" ForeColor="Red" Style="z-index: 102; left: 210px;
-        position: absolute; top: 250px"></asp:Label>
+
+    <asp:Label ID="errorLabel" runat="server" ForeColor="Red" Style="z-index: 102; left: 246px;
+        position: absolute; top: 216px"></asp:Label>
 </div>
 </asp:Content>
 
