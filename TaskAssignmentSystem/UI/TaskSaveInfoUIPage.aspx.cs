@@ -9,6 +9,9 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Data.SqlClient;
+using System.Collections.Generic;
+
+
 
 public partial class UI_TaskSaveInfoUIPage : System.Web.UI.Page
 {
@@ -74,6 +77,18 @@ public partial class UI_TaskSaveInfoUIPage : System.Web.UI.Page
 
     protected void cancelButton_Click(object sender, EventArgs e)
     {
-        Response.Redirect("TaskNewUIPage.aspx");
+
+        Response.Redirect("TaskNewUIPage.aspx?"
+       + "&Id=" + Server.UrlEncode(this.idLabel.Text)
+       + "&Title=" + Server.UrlEncode(this.nameLabel.Text)
+       + "&Description=" + Server.UrlEncode(this.descriptionLabel.Text)
+       + "&StartDate=" + Server.UrlEncode(this.startDateLabel.Text)
+       + "&EstimateTime=" + Server.UrlEncode(this.estimateTimeLabel.Text)
+       + "&EmployeeName=" + Server.UrlEncode(this.employeeNameLabel.Text)
+       + "&ProjectTitle=" + Server.UrlEncode(this.projectTitleLabel.Text)
+       + "&EmployeeId=" + Server.UrlEncode(this.employeeIdLabel.Text)
+       + "&ProjectId=" + Server.UrlEncode(this.projectIdLabel.Text));
+
+        
     }
 }

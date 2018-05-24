@@ -353,24 +353,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\BLL\CommentManager.cs" />
-    <Compile Include="App_Code\BLL\DataValidator.cs" />
-    <Compile Include="App_Code\BLL\NonUserEmployeeException.cs" />
-    <Compile Include="App_Code\BLL\OnlyOneAdminException.cs" />
-    <Compile Include="App_Code\BLL\PrimaryKeyException.cs" />
-    <Compile Include="App_Code\DAL\DAO\Client.cs" />
-    <Compile Include="App_Code\DAL\DAO\Comment.cs" />
-    <Compile Include="App_Code\DAL\DAO\Employee.cs" />
-    <Compile Include="App_Code\DAL\DAO\Project.cs" />
-    <Compile Include="App_Code\DAL\DAO\Task.cs" />
-    <Compile Include="App_Code\DAL\DAO\User.cs" />
-    <Compile Include="App_Code\DAL\Gateway\ClientGateway.cs" />
-    <Compile Include="App_Code\DAL\Gateway\CommentGateway.cs" />
-    <Compile Include="App_Code\DAL\Gateway\EmployeeGateway.cs" />
-    <Compile Include="App_Code\DAL\Gateway\ProjectGateway.cs" />
-    <Compile Include="App_Code\DAL\Gateway\TaskGateway.cs" />
-    <Compile Include="App_Code\DAL\Gateway\UserGateway.cs" />
-    <Compile Include="App_Code\DAL\DBConnector.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -396,6 +378,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Lib\Client.cs" />
+    <Compile Include="Lib\ClientGateway.cs" />
+    <Compile Include="Lib\Comment.cs" />
+    <Compile Include="Lib\CommentGateway.cs" />
+    <Compile Include="Lib\CommentManager.cs" />
+    <Compile Include="Lib\DataValidator.cs" />
+    <Compile Include="Lib\DBConnector.cs" />
+    <Compile Include="Lib\Employee.cs" />
+    <Compile Include="Lib\EmployeeGateway.cs" />
+    <Compile Include="Lib\NonUserEmployeeException.cs" />
+    <Compile Include="Lib\OnlyOneAdminException.cs" />
+    <Compile Include="Lib\PrimaryKeyException.cs" />
+    <Compile Include="Lib\Project.cs" />
+    <Compile Include="Lib\ProjectGateway.cs" />
+    <Compile Include="Lib\Task.cs" />
+    <Compile Include="Lib\TaskGateway.cs" />
+    <Compile Include="Lib\User.cs" />
+    <Compile Include="Lib\UserGateway.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -584,6 +584,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

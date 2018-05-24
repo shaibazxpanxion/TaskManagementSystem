@@ -24,10 +24,10 @@ public class Project
     private DateTime startDate;
     private DateTime estimateTime;
     private string clientId;
+    private string client_name;
     private string emloyee_Id;
     private string status;
-    private string client_Name;
-
+  
     public string ID
     {
         set { id = value; }
@@ -64,16 +64,16 @@ public class Project
         get { return clientId; }
     }
 
+    public string Client_Name
+    {
+        set { client_name = value; }
+        get { return client_name; }
+    }
+
     public string Employee_Id
     {
         set { emloyee_Id = value; }
         get { return emloyee_Id; }
-    }
-
-    public string Client_Name
-    {
-        set { client_Name = value; }
-        get { return client_Name; }
     }
 
     public string Status

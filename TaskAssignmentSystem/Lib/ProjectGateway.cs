@@ -336,7 +336,7 @@ public class ProjectGateway
         Project projectObject = null;
         try
         {
-            string selectString = "SELECT distinct * FROM t_Project INNER JOIN T_Client on t_Project.project_Client_ID = t_Client.client_ID WHERE project_Id = '" + projectId + "'";
+            string selectString = "SELECT * FROM t_Project WHERE project_Id = '" + projectId + "'";
             DBConnector dbConnector = new DBConnector();
             sqlConn = dbConnector.GetConnection;
             SqlDataAdapter sqlDataAdapterObject = new SqlDataAdapter(selectString, sqlConn);
@@ -347,7 +347,6 @@ public class ProjectGateway
             projectObject = new Project();
             projectObject.ID = dataTableObject.Rows[0]["project_Id"].ToString();
             projectObject.Title = dataTableObject.Rows[0]["project_Title"].ToString();
-            projectObject.Client_Name = dataTableObject.Rows[0]["client_CompanyName"].ToString();
             projectObject.Description = dataTableObject.Rows[0]["project_Description"].ToString();
             projectObject.StartDate = Convert.ToDateTime(dataTableObject.Rows[0]["project_StartTime"].ToString());
             projectObject.EstimateTime = Convert.ToDateTime(dataTableObject.Rows[0]["project_EstimateTime"].ToString());
@@ -416,49 +415,6 @@ public class ProjectGateway
             return false;
         }
 
-    }
-
-    public string SaveProject(Project projectObj)
-    {
-        bool isSaved = false;
-        string projectCreatorID = System.Web.HttpContext.Current.Session["userID"].ToString();
-        //This obtains value of a session variable
-        //session variable is directly accessable in code behind a aspx page
-        //to obtain session variable from classes with out aspx page, absolut path needed
-
-        try
-        {
-            ProjectGateway projectGatewayObj = new ProjectGateway();
-
-            // Business logic is project creator must be a member of the project.
-            if (!projectObj.Employee_Id.Contains(projectCreatorID))
-            {
-                projectObj.Employee_Id += "," + projectCreatorID;
-            }
-
-            isSaved = projectGatewayObj.InsertProject(projectObj);
-        }
-        catch (PrimaryKeyException primaryKeyExceptionObj)
-        {
-            throw primaryKeyExceptionObj;
-        }
-        catch (SqlException sqlExceptionObject)
-        {
-            throw sqlExceptionObject;
-        }
-        catch (Exception exceptionObj)
-        {
-            throw exceptionObj;
-        }
-
-        if (isSaved)
-        {
-            return "Project has been saved.";
-        }
-        else
-        {
-            return "Project is not saved";
-        }
     }
 
     /// <summary>

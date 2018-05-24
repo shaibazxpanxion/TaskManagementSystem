@@ -32,18 +32,18 @@ public class UserGateway
     {
         SqlConnection sqlConn = null;
         int noOfRowsAffectedUserTable = 0;
-        //int noOfRowAffectedEmployeeTable = 0;
+        int noOfRowAffectedEmployeeTable = 0;
         try
         {
             string insertString = "INSERT INTO t_User(user_Employee_Id, user_Password,user_CreationDate, user_AuthenticationMode )VALUES('" + userObj.EmployeeId + "','" + userObj.UserPassword + "','" + userObj.CreateDate + "','" + userObj.UserType + "')";
-            //string updateString = "UPDATE t_Employee SET  employee_AuthenticationModeFlag = 'True' WHERE employee_Id= '" + userObj.EmployeeId + "'";
+            string updateString = "UPDATE t_Employee SET  employee_AuthenticationModeFlag = 'True' WHERE employee_Id= '" + userObj.EmployeeId + "'";
             DBConnector dbConnectorObj = new DBConnector();
             sqlConn = dbConnectorObj.GetConnection;
             sqlConn.Open();
             SqlCommand sqlCom = new SqlCommand(insertString, sqlConn);
             noOfRowsAffectedUserTable = sqlCom.ExecuteNonQuery();
-            //sqlCom = new SqlCommand(updateString, sqlConn);
-            //noOfRowAffectedEmployeeTable = sqlCom.ExecuteNonQuery();
+            sqlCom = new SqlCommand(updateString, sqlConn);
+            noOfRowAffectedEmployeeTable = sqlCom.ExecuteNonQuery();
         }
         catch (SqlException sqlExceptionObject)
         {
@@ -68,7 +68,7 @@ public class UserGateway
             }
         }
 
-        if (noOfRowsAffectedUserTable > 0)
+        if (noOfRowsAffectedUserTable > 0 && noOfRowAffectedEmployeeTable > 0)
         {
             return true;
         }

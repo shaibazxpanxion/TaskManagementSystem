@@ -16,6 +16,16 @@ public partial class UI_TaskNewUIPage : System.Web.UI.Page
     {
         if (!Page.IsPostBack)
         {
+            this.taskIdTextBox.Text = Request.QueryString["Id"];
+            this.taskNameTextBox.Text = Request.QueryString["Title"];
+            this.taskDescriptionTextBox.Text = Request.QueryString["Description"];
+            this.startDateTextBox.Text = Request.QueryString["StartDate"];
+            this.estimatedDateTextBox.Text = Request.QueryString["EstimateTime"];
+            this.employeeDropDownList.Text = Request.QueryString["EmployeeId"];
+            this.employeeDropDownList.Text = Request.QueryString["EmployeeName"];
+            this.projectDropDownList.Text = Request.QueryString["ProjectTitle"];
+            this.projectDropDownList.Text = Request.QueryString["ProjectId"];
+
             this.FillProjectDropDownList();
             CreateTaskSuccessLabel.Text = Request.QueryString["message"];
         }

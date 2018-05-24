@@ -33,7 +33,7 @@ public class EmployeeGateway
         int noOfRowsAffected = 0;
         try
         {
-            string insertString = "INSERT INTO t_Employee(employee_Id, employee_Name, employee_Address, employee_PhoneNo, employee_Email, employee_JoinDate, employee_DateOfBirth) VALUES('" + employeeObject.ID + "','" + employeeObject.Name + "','" + employeeObject.Address + "','" + employeeObject.PhoneNo + "','" + employeeObject.Email + "','" + employeeObject.JoiningDate + "','" + employeeObject.DOB + "')";
+            string insertString = "INSERT INTO t_Employee(employee_Id, employee_Name, employee_Address, employee_PhoneNo, employee_Email, employee_JoinDate, employee_DateOfBirth, employee_AuthenticationModeFlag) VALUES('" + employeeObject.ID + "','" + employeeObject.Name + "','" + employeeObject.Address + "','" + employeeObject.PhoneNo + "','" + employeeObject.Email + "','" + employeeObject.JoiningDate + "','" + employeeObject.DOB + "', 'False')";
             DBConnector dbConnector = new DBConnector();
             sqlConn = dbConnector.GetConnection;
             sqlConn.Open();
@@ -219,7 +219,7 @@ public class EmployeeGateway
         try
         {
             List<Employee> employeeList = new List<Employee>();
-            string selectQuery = "SELECT employee_Id ,employee_Name,employee_Address,employee_PhoneNo,employee_Email,employee_JoinDate,employee_DateOfBirth FROM t_Employee";
+            string selectQuery = "SELECT employee_Id ,employee_Name,employee_Address,employee_PhoneNo,employee_Email,employee_JoinDate,employee_DateOfBirth FROM t_Employee WHERE employee_AuthenticationModeFlag='True'";
             DBConnector dbConnector = new DBConnector();
             sqlConn = dbConnector.GetConnection;
             sqlConn.Open();
@@ -264,7 +264,7 @@ public class EmployeeGateway
         try
         {
             List<Employee> employeeList = new List<Employee>();
-            string selectQuery = "SELECT employee_Id ,employee_Name,employee_Address,employee_PhoneNo,employee_Email,employee_JoinDate,employee_DateOfBirth FROM t_Employee where employee_Id not in (select user_Employee_Id from t_User)";
+            string selectQuery = "SELECT employee_Id ,employee_Name,employee_Address,employee_PhoneNo,employee_Email,employee_JoinDate,employee_DateOfBirth FROM t_Employee WHERE employee_AuthenticationModeFlag='False'";
             DBConnector dbConnector = new DBConnector();
             sqlConn = dbConnector.GetConnection;
             sqlConn.Open();

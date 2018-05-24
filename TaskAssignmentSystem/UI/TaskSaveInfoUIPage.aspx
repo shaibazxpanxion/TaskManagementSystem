@@ -1,16 +1,10 @@
 <%@ Page Language="C#" MasterPageFile="~/UI/MasterPage.master" AutoEventWireup="true" Inherits="UI_TaskSaveInfoUIPage"  Codebehind="TaskSaveInfoUIPage.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
-<div style="height:600px">
+    <div style="height:600px">
     <div>
-        <table>
-        <tr>
-            <td align="center" style="width: 950px; color: window; background-color: royalblue;">
-                <h3>
-                    Make Sure All Information Is Right</h3></td>
-        </tr>
-    </table>
+        
         <div id="DIV1" onclick="return DIV1_onclick()" style="z-index: 100; left: 242px;
-            width: 493px; position: absolute; top: 281px; height: 422px">
+            width: 493px; position: absolute; top: 281px; height: 422px; text-align: justify;">
             <asp:Label ID="idLabel" runat="server" BorderStyle="Groove" Font-Size="Medium" Style="z-index: 100;
                 left: 216px; position: absolute; top: 35px" Width="199px"></asp:Label>
             <asp:Label ID="nameLabel" runat="server" BorderStyle="Groove" Font-Size="Medium"
@@ -31,23 +25,23 @@
             &nbsp; &nbsp;
             <asp:Label ID="estimateTimeLabel" runat="server" BorderStyle="Groove" Font-Size="Medium"
                 Style="z-index: 108; left: 215px; position: absolute; top: 175px" Width="199px"></asp:Label>
-            <asp:Label ID="Label1" runat="server" Style="z-index: 109; left: -1px; position: absolute;
+            <asp:Label ID="Label1" runat="server" Style="z-index: 109; left: 8px; position: absolute;
                 top: 180px" Text="Estimated Finishing Date: "></asp:Label>
             &nbsp;&nbsp;
             <asp:Button ID="saveButton" runat="server"  Style="z-index: 110;
                 left: 98px; position: absolute; top: 383px" Text="Save" Width="155px" OnClick="SaveButton_Click" />
             <asp:Button ID="cancelButton" runat="server"  Style="z-index: 111;
                 left: 258px; position: absolute; top: 382px" Text="Cancel" Width="155px" OnClick="cancelButton_Click" />
-            <asp:Label ID="Label2" runat="server" Style="z-index: 112; left: 62px; position: absolute;
-                top: 211px" Text="Employee Id: " Width="86px"></asp:Label>
+            <asp:Label ID="Label2" runat="server" Style="z-index: 112; left: 61px; position: absolute;
+                top: 212px; width: 105px;" Text="Employee Id: "></asp:Label>
             <asp:Label ID="employeeIdLabel" runat="server" BorderStyle="Groove" Font-Size="Medium"
                 Style="z-index: 113; left: 214px; position: absolute; top: 207px" Width="199px"></asp:Label>
             <asp:Label ID="Labelproject" runat="server" Style="z-index: 114; left: 62px; position: absolute;
                 top: 318px" Text="Project Id: " Width="86px"></asp:Label>
             <asp:Label ID="projectIdLabel" runat="server" BorderStyle="Groove" Font-Size="Medium"
                 Style="z-index: 115; left: 214px; position: absolute; top: 313px" Width="199px"></asp:Label>
-            <asp:Label ID="Label3" runat="server" Style="z-index: 116; left: 79px; position: absolute;
-                top: 246px" Text="Assign To:" Width="69px"></asp:Label>
+            <asp:Label ID="Label3" runat="server" Style="z-index: 116; left: 63px; position: absolute;
+                top: 246px; width: 106px;" Text="Assign To:"></asp:Label>
             <asp:Label ID="employeeNameLabel" runat="server" BorderStyle="Groove" Font-Size="Medium"
                 Style="z-index: 117; left: 213px; position: absolute; top: 240px" Width="199px"></asp:Label>
             <asp:Label ID="Label4" runat="server" Style="z-index: 118; left: 62px; position: absolute;
@@ -55,9 +49,30 @@
             <asp:Label ID="projectTitleLabel" runat="server" BorderStyle="Groove" Font-Size="Medium"
                 Style="z-index: 120; left: 213px; position: absolute; top: 276px" Width="199px"></asp:Label>
         </div>
-        <asp:Label ID="errorMessageLabel" runat="server" Style="z-index: 101; left: 210px;
-            position: absolute; top: 230px" Width="169px" ForeColor="Red"></asp:Label>
+        <asp:Label ID="errorMessageLabel" runat="server" Style="z-index: 101; left: 254px;
+            position: absolute; top: 204px" Width="169px" ForeColor="Red"></asp:Label>
     </div>
+
+    <table>
+        
+          <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+         <tr>
+            <td>&nbsp;</td>
+        </tr>
+        
+        <tr>
+            <td style="margin-left: 160px;color:darkblue">
+                <h3>Make Sure All Information Is Right</h3>
+            </td>
+           </tr>
+         
+    </table>
+
 </div>
 </asp:Content>
 

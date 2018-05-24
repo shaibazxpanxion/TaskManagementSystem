@@ -44,7 +44,7 @@ public partial class UI_ProjectSaveInfoUIPage : System.Web.UI.Page
             projectObj.Status = statusLabel.Text;
 
             ProjectGatewayObject = new ProjectGateway();
-            string message = ProjectGatewayObject.SaveProject(projectObj);
+            string message = ProjectGatewayObject.InsertProject(projectObj).ToString();
             Response.Redirect("ProjectCreateUIPage.aspx?" + "&message =" + Server.UrlEncode(message));
         }
         catch (PrimaryKeyException primaryKeyExceptionObj)
