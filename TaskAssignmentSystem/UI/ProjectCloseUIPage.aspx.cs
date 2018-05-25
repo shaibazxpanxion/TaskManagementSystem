@@ -149,6 +149,7 @@ public partial class UI_ProjectStatusEditUIPage : System.Web.UI.Page
         Project projectObject= ProjectGatewayObject.SelectProject(projectDropDownList.SelectedItem.Value);
         clientIdLabel.Text = projectObject.Client_Name;
         projectStatusLabel.Text= projectObject.Status;
+
     }
 
 }

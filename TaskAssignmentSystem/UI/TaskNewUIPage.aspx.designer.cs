@@ -48,6 +48,15 @@ public partial class UI_TaskNewUIPage {
     protected global::System.Web.UI.WebControls.TextBox startDateTextBox;
     
     /// <summary>
+    /// CalendarExtender1 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
+    
+    /// <summary>
     /// taskNameTextBox control.
     /// </summary>
     /// <remarks>
@@ -64,6 +73,15 @@ public partial class UI_TaskNewUIPage {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox estimatedDateTextBox;
+    
+    /// <summary>
+    /// CalendarExtender2 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
     
     /// <summary>
     /// TaskIdLabel control.
@@ -127,24 +145,6 @@ public partial class UI_TaskNewUIPage {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label CreateTaskSuccessLabel;
-    
-    /// <summary>
-    /// Label3 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label3;
-    
-    /// <summary>
-    /// Label4 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label4;
     
     /// <summary>
     /// Label5 control.

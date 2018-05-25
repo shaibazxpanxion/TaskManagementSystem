@@ -1,5 +1,6 @@
 <%@ Master Language="C#" AutoEventWireup="true" Inherits="UI_MasterPage" Codebehind="MasterPage.master.cs" %>
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -7,7 +8,7 @@
     <title>Task Assignment System</title>
     <style type="text/css">
         .auto-style2 {
-            z-index: 102;
+             102;
             left: 25px;
             position: absolute;
             top: 205px;
@@ -24,7 +25,7 @@
             left: 25px;
         }
         .auto-style5 {
-            z-index: 100;
+             100;
             left: 246px;
             position: absolute;
             top: 172px;
@@ -34,11 +35,18 @@
 <body>
 
   
-
+    
+    
+     
 
     <form id="form1" runat="server">
+       
+  <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        
     <div>
-        <table style="width: 100%; height: 100%; z-index: 102; left: 0px; position: absolute; top: 0px;">
+        <table style="width: 100%; height: 100%;  102; left: 0px; position: absolute; top: 0px;">
             <tr>
                 <td colspan="2" style="height: 141px; background-color: black;">
                    <h2 align="center"> 
@@ -127,6 +135,7 @@
     </div>
         
     </form>
-        
+         
 </body>
 </html>
+  

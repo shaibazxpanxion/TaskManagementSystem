@@ -336,7 +336,7 @@ public class ProjectGateway
         Project projectObject = null;
         try
         {
-            string selectString = "SELECT * FROM t_Project WHERE project_Id = '" + projectId + "'";
+            string selectString = "SELECT t_Project.project_Id,t_Project.project_Title,t_Project.project_Description,t_Project.project_StartTime,t_Project.project_EstimateTime,t_Project.project_Status,t_Client.client_ID,t_Client.client_CompanyName FROM t_Project inner join t_Client on t_Project.project_Client_ID = t_Client.client_ID WHERE project_Id = '" + projectId + "'";
             DBConnector dbConnector = new DBConnector();
             sqlConn = dbConnector.GetConnection;
             SqlDataAdapter sqlDataAdapterObject = new SqlDataAdapter(selectString, sqlConn);
@@ -350,7 +350,8 @@ public class ProjectGateway
             projectObject.Description = dataTableObject.Rows[0]["project_Description"].ToString();
             projectObject.StartDate = Convert.ToDateTime(dataTableObject.Rows[0]["project_StartTime"].ToString());
             projectObject.EstimateTime = Convert.ToDateTime(dataTableObject.Rows[0]["project_EstimateTime"].ToString());
-            projectObject.ClientId = dataTableObject.Rows[0]["project_Client_ID"].ToString();
+            projectObject.ClientId = dataTableObject.Rows[0]["client_ID"].ToString();
+            projectObject.Client_Name = dataTableObject.Rows[0]["client_CompanyName"].ToString();
             projectObject.Status = dataTableObject.Rows[0]["project_Status"].ToString();
         }
         catch (SqlException sqlExceptionObj)

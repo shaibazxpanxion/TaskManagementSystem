@@ -120,6 +120,15 @@ public partial class UI_EmployeeUIPage {
     protected global::System.Web.UI.WebControls.TextBox employeeJoindateTextBox;
     
     /// <summary>
+    /// CalendarExtender1 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
+    
+    /// <summary>
     /// employeeDOBTextBox control.
     /// </summary>
     /// <remarks>
@@ -127,6 +136,15 @@ public partial class UI_EmployeeUIPage {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox employeeDOBTextBox;
+    
+    /// <summary>
+    /// CalendarExtender2 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
     
     /// <summary>
     /// Label3 control.

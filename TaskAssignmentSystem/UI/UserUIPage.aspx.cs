@@ -117,7 +117,7 @@ public partial class UI_UserUIPage : System.Web.UI.Page
 
             if (EmployeeGatewayObject.SelectAllNonUserEmployees().Count == 0)
             {
-                errorMessageLabel.Text = "All employee is a user.";
+                errorMessageLabel.Text = "All employee have been assign the user and type.";
             }
         }
         catch (SqlException sqlExceptionObj)

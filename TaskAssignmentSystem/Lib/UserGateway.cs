@@ -36,13 +36,13 @@ public class UserGateway
         try
         {
             string insertString = "INSERT INTO t_User(user_Employee_Id, user_Password,user_CreationDate, user_AuthenticationMode )VALUES('" + userObj.EmployeeId + "','" + userObj.UserPassword + "','" + userObj.CreateDate + "','" + userObj.UserType + "')";
-            string updateString = "UPDATE t_Employee SET  employee_AuthenticationModeFlag = 'True' WHERE employee_Id= '" + userObj.EmployeeId + "'";
+            //string updateString = "UPDATE t_Employee SET  employee_AuthenticationModeFlag = 'True' WHERE employee_Id= '" + userObj.EmployeeId + "'";
             DBConnector dbConnectorObj = new DBConnector();
             sqlConn = dbConnectorObj.GetConnection;
             sqlConn.Open();
             SqlCommand sqlCom = new SqlCommand(insertString, sqlConn);
             noOfRowsAffectedUserTable = sqlCom.ExecuteNonQuery();
-            sqlCom = new SqlCommand(updateString, sqlConn);
+            //sqlCom = new SqlCommand(updateString, sqlConn);
             noOfRowAffectedEmployeeTable = sqlCom.ExecuteNonQuery();
         }
         catch (SqlException sqlExceptionObject)

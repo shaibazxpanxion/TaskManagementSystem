@@ -41,6 +41,7 @@ public partial class UI_ProjectEditUIPage : System.Web.UI.Page
         //projectObj.Employee_Id = assignedToDropDownList.Text;
         projectObj.Status = projectStatusLabel.Text;
 
+
         try
         {
             ProjectGateway ProjectGatewayObject = new ProjectGateway();
@@ -57,7 +58,18 @@ public partial class UI_ProjectEditUIPage : System.Web.UI.Page
             errorLabel.Text = exceptionObj.Message;
         }
         successLabel.Text = message.ToString();
-        errorLabel.Text = "";
+
+        if(successLabel.Text == "True")
+        {
+            errorLabel.Text = "";
+            successLabel.Text = "Project details has been updated";
+        }
+        else
+        {
+            successLabel.Text = "";
+            errorLabel.Text = "Project details has not been updated";
+        }
+      
         LoadProjectData();
 
     }
@@ -143,8 +155,8 @@ public partial class UI_ProjectEditUIPage : System.Web.UI.Page
         {
             ClientGateway ClientGatewayObject = new ClientGateway();
             clientNameDropDownList.DataSource = ClientGatewayObject.GetClientTable();
-            clientNameDropDownList.DataTextField = "CompanyName";
-            clientNameDropDownList.DataValueField = "ID";
+            clientNameDropDownList.DataTextField = "client_CompanyName";
+            clientNameDropDownList.DataValueField = "client_ID";
             clientNameDropDownList.DataBind();
         }
         catch (SqlException sqlExceptionObj)

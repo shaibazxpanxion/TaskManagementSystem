@@ -12,6 +12,15 @@
 public partial class UI_ProjectCreateUIPage {
     
     /// <summary>
+    /// Label9 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label Label9;
+    
+    /// <summary>
     /// Panel1 control.
     /// </summary>
     /// <remarks>
@@ -84,6 +93,15 @@ public partial class UI_ProjectCreateUIPage {
     protected global::System.Web.UI.WebControls.TextBox startDateTextBox;
     
     /// <summary>
+    /// CalendarExtender1 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
+    
+    /// <summary>
     /// Label5 control.
     /// </summary>
     /// <remarks>
@@ -100,6 +118,15 @@ public partial class UI_ProjectCreateUIPage {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox estimateDateTextBox;
+    
+    /// <summary>
+    /// CalendarExtender2 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
     
     /// <summary>
     /// Label6 control.
@@ -154,24 +181,6 @@ public partial class UI_ProjectCreateUIPage {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox idTextBox;
-    
-    /// <summary>
-    /// dateEGLabel control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label dateEGLabel;
-    
-    /// <summary>
-    /// Label8 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label8;
     
     /// <summary>
     /// allEmployeeListBox control.
@@ -262,13 +271,4 @@ public partial class UI_ProjectCreateUIPage {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.GridView projectGridView;
-    
-    /// <summary>
-    /// Label9 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label9;
 }

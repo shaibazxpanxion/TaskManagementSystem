@@ -293,9 +293,5 @@ public partial class UI_ProjectCreateUIPage : System.Web.UI.Page
         }
     }
 
-
-
-    
-
-    
+   
 }
