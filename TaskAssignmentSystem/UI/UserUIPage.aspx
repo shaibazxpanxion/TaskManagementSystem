@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="mainContentPlaceHolder" Runat="Server">
     <div style="height:600px">
         <div>
-       
             <asp:Label ID="successLabel" runat="server" Font-Bold="True" ForeColor="Green" Style=" 100;
                 left: 249px; position: absolute; top: 196px"></asp:Label>
             <asp:Button ID="createButton" runat="server"  Style=" 101;
