@@ -32,8 +32,6 @@ public partial class UI_UserUIPage : System.Web.UI.Page
 
     }
 
-
-
     protected void createButton_Click(object sender, EventArgs e)
     {
         if (!CheckInput())
