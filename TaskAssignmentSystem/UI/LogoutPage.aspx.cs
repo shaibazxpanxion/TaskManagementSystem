@@ -15,6 +15,6 @@ public partial class UI_LogoutPage : System.Web.UI.Page
     {
         Session.Abandon();
         Session.Clear();
-        Response.Redirect("LogInUI.aspx", true);
+        Response.Redirect("~/LogInUI.aspx", true);
     }
 }
