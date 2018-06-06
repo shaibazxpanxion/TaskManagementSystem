@@ -32,7 +32,7 @@
                 </td>
             </tr>
             <tr>
-              
+              no
                 <td align="center" style="height: 511px; width: 439px">
         <div style="border-style: solid; border-color: inherit; border-width: thin; background-color: dodgerblue;" class="auto-style1">
             <asp:Label ID="Label1" runat="server" Style=" 100; left: 25px; position: absolute;

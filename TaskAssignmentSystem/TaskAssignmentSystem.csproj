@@ -525,7 +525,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
